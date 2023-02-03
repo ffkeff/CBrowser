@@ -11,9 +11,9 @@ namespace CBrowser
             settings.BaseUrl = "https://google.com";
             settings.Prefix = "";
             var pageStream = new PageLoader(settings);
-            var page = pageStream.GetPageAsync().ToString();
+            var page = pageStream.GetPageAsync();
             var pageDictionary = new PageSaver();
-            pageDictionary.AddPage("google", page);
+            pageDictionary.AddPage("google", page.Result);
             Console.WriteLine(pageDictionary.GetPageByName("google"));
         }
     }

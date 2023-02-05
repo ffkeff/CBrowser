@@ -7,6 +7,8 @@ namespace CBrowser
     {
         public static void Main()
         {
+            var form = new Form1();
+            form.Text = "asdasdas";
             var settings = new LoaderSettings();
             settings.BaseUrl = "https://google.com";
             settings.Prefix = "";
@@ -14,7 +16,8 @@ namespace CBrowser
             var page = pageStream.GetPageAsync();
             var pageDictionary = new PageSaver();
             pageDictionary.AddPage("google", page.Result);
-            Console.WriteLine(pageDictionary.GetPageByName("google"));
+            //Console.WriteLine(pageDictionary.GetPageByName("google"));
+            //form.richTextBox1_TextChanged(page.Result);
         }
     }
 }

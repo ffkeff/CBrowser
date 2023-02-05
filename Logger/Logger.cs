@@ -4,7 +4,7 @@
     {
         private readonly StreamWriter writer;
         private string LogPath { get; set; }
-        Logger(string LogPath)
+        public Logger(string LogPath)
         {
             this.LogPath = LogPath;
             writer = new StreamWriter(LogPath);

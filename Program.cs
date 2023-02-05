@@ -1,14 +1,15 @@
 ﻿using CBrowser.Core.PageLoader;
 using CBrowser.Core.PageSaver;
 
+
 namespace CBrowser
 {
-    class CBrowser
+    class Program
     {
         public static void Main()
         {
             var form = new Form1();
-            form.Text = "asdasdas";
+            form.Show();
             var settings = new LoaderSettings();
             settings.BaseUrl = "https://google.com";
             settings.Prefix = "";
@@ -18,6 +19,15 @@ namespace CBrowser
             pageDictionary.AddPage("google", page.Result);
             //Console.WriteLine(pageDictionary.GetPageByName("google"));
             //form.richTextBox1_TextChanged(page.Result);
+            var MainTextBox = new RichTextBox();
+            MainTextBox.Dock = DockStyle.Fill;
+            MainTextBox.LoadFile(page.Result);
+            MainTextBox.SelectionFont = new Font("verdana", 12, FontStyle.Bold);
+            
+
+           
         }
+
+       
     }
 }
